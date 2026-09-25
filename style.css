@@ -143,14 +143,14 @@ p { margin: 0; }
   content: ""; position: absolute; left: 8%; right: 8%; top: 26px; height: 2px;
   background: rgba(255,255,255,.45);
 }
-.etape { position: relative; counter-increment: etape; }
+.etape { position: relative; counter-increment: etape; display: flex; flex-direction: column; }
 .etape .num {
   width: 54px; height: 54px; border-radius: 50%;
   background: var(--blanc); color: var(--teal);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--serif); font-size: 1.4rem; position: relative; z-index: 1;
 }
-.etape .carte { background: var(--blanc); color: var(--marine); border-radius: 18px; padding: 22px 20px; margin-top: 18px; min-height: 100%; }
+.etape .carte { background: var(--blanc); color: var(--marine); border-radius: 18px; padding: 22px 20px; margin-top: 18px; flex: 1; }
 .etape h3 { font-size: 1.2rem; margin-bottom: 8px; }
 .etape p { font-size: .95rem; color: var(--texte-doux); }
 .parcours .suite { margin-top: 48px; }
@@ -195,8 +195,8 @@ p { margin: 0; }
 .acces .btn:hover { background: var(--marine); color: var(--blanc); }
 
 /* Contact */
-.contacts { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 20px; }
-.contact-carte { border: 1.5px solid #DCE5E9; border-radius: 20px; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px; }
+.contacts { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 20px; }
+.contact-carte { background: var(--blanc); border: 1.5px solid #DCE5E9; border-radius: 20px; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px; }
 .contact-carte h3 { font-size: 1.3rem; }
 .contact-carte .role { color: var(--teal); font-weight: 600; font-size: .95rem; margin-bottom: 10px; }
 .contact-carte a { font-weight: 600; text-decoration: none; color: var(--marine); overflow-wrap: anywhere; }
@@ -243,4 +243,9 @@ p { margin: 0; }
   .tarif-bloc { padding: 24px 20px; }
   .pied-grille { grid-template-columns: 1fr; }
   .hero .actions .btn { flex: 1 1 auto; text-align: center; }
+}
+/* Motif de la charte (entête des factures) */
+.motif-bande {
+  height: 8px;
+  background: #3D868F url("images/motif.jpg") center / cover no-repeat;
 }
