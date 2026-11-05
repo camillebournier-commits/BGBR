@@ -282,12 +282,6 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
 .sommaire a span { display: block; font-family: var(--sans); font-size: .85rem; color: var(--teal); font-weight: 600; margin-top: 4px; }
 .sommaire a:hover { background: var(--marine); color: var(--blanc); }
 .sommaire a:hover span { color: #8FC3C9; }
-.profils { padding-bottom: clamp(48px, 7vw, 96px); }
-.profil { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; padding: 56px 0; border-top: 1px solid #E3EAED; }
-.profil:first-child { border-top: 0; padding-top: 0; }
-.profil-photo { aspect-ratio: 3 / 4; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 108px); }
-.profil .role { color: var(--teal); font-weight: 600; }
-.profil h2 { margin-top: 6px; }
 .info-profil { margin-top: 20px; background: var(--fond-doux); border-left: 3px solid var(--terracotta); padding: 14px 18px; border-radius: 0 12px 12px 0; color: var(--marine); max-width: 64ch; }
 .bio { margin-top: 20px; }
 .bio p { max-width: 64ch; color: var(--texte-doux); }
@@ -296,9 +290,6 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
 .details > div { display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 12px 0; border-bottom: 1px solid #E3EAED; }
 .details dt { font-weight: 700; font-size: .93rem; }
 .details dd { margin: 0; color: var(--texte-doux); font-size: .97rem; }
-.profil-contact { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 28px; }
-.profil-contact a { font-weight: 600; text-decoration: none; color: var(--marine); overflow-wrap: anywhere; }
-.profil-contact a:hover { color: var(--terracotta); text-decoration: underline; }
 .cta .conteneur { text-align: center; }
 .cta .chapeau { margin-left: auto; margin-right: auto; }
 
@@ -307,11 +298,83 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
 }
 @media (max-width: 860px) {
   .histoire { grid-template-columns: 1fr; gap: 24px; }
-  .profil { grid-template-columns: 1fr; gap: 28px; }
-  .profil-photo { position: static; max-width: 280px; }
-}
+    }
 @media (max-width: 640px) {
   .sommaire { grid-template-columns: 1fr 1fr; }
   .details > div { grid-template-columns: 1fr; gap: 2px; }
 }
 @media (prefers-reduced-motion: reduce) { .membre-lien:hover .img { transform: none; } }
+
+/* Ce que nous proposons */
+.services { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service { border: 1.5px solid #DCE5E9; border-radius: 20px; padding: 28px 26px; border-top: 4px solid var(--teal); }
+.service:nth-child(3n+2) { border-top-color: var(--terracotta); }
+.service:nth-child(3n) { border-top-color: var(--marine); }
+.service h3 { font-size: 1.3rem; margin-bottom: 10px; }
+.service p { color: var(--texte-doux); font-size: .97rem; }
+
+/* Tarifs, page d'accueil */
+.infos-tarifs { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.infos-tarifs li { background: var(--blanc); border-radius: 18px; padding: 22px 24px; }
+.infos-tarifs strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.25rem; color: var(--marine); }
+.infos-tarifs span { color: var(--texte-doux); font-size: .95rem; }
+.sommaire-tarifs { margin-top: 32px; }
+.sommaire-tarifs a { background: var(--blanc); }
+.sommaire a em { display: block; font-style: normal; font-family: var(--sans); font-size: .88rem; font-weight: 600; color: var(--terracotta); margin-top: 12px; text-decoration: underline; text-underline-offset: 3px; }
+.sommaire a:hover em { color: var(--blanc); }
+.sommaire-4 { grid-template-columns: repeat(4, 1fr); margin-top: 32px; }
+
+/* Contact, page d'accueil */
+.contact-carte h3 a { text-decoration: none; color: inherit; }
+.contact-carte h3 a:hover { color: var(--terracotta); text-decoration: underline; }
+.coords-ligne { display: contents; }
+
+/* Page équipe */
+.cartes-equipe { padding-bottom: clamp(56px, 8vw, 104px); }
+.cartes-equipe .conteneur { display: grid; gap: 0; }
+.carte-membre { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: center; padding: 36px 0; border-top: 1px solid #E3EAED; }
+.carte-membre:first-child { border-top: 0; padding-top: 0; }
+.carte-membre .img { aspect-ratio: 3 / 4; }
+.carte-membre .role { color: var(--teal); font-weight: 600; }
+.carte-membre h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); margin-top: 4px; }
+.carte-membre h2 a { text-decoration: none; }
+.carte-membre h2 a:hover { color: var(--terracotta); }
+.carte-membre .desc { color: var(--texte-doux); margin: 12px 0 16px; max-width: 68ch; }
+
+/* Pages personnelles */
+.hero-personne .img { aspect-ratio: 3 / 4; max-width: 380px; justify-self: end; width: 100%; }
+.hero-personne div.img { background: #2A4462; color: #9FB3C8; }
+.hero-personne h1 { max-width: none; font-size: clamp(2.4rem, 5vw, 3.8rem); }
+.role-hero { color: #8FC3C9; font-weight: 600; margin-bottom: 8px; font-size: 1.05rem; }
+.fil { font-size: .9rem; margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 8px; color: #A9BBCF; }
+.fil a { color: #D7E1EC; }
+.fil a:hover { color: var(--blanc); }
+.hero .fil + .role-hero + h1 + p, .hero-personne p { margin-top: 0; }
+.hero-personne h1 + p { margin-top: 20px; }
+.personne { display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
+.personne-contact { background: var(--fond-doux); border-radius: 24px; padding: 28px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 108px); }
+.personne-contact h2 { font-size: 1.5rem; margin-bottom: 16px; }
+.coords { display: grid; gap: 8px; }
+.coords a { font-weight: 600; text-decoration: none; color: var(--marine); overflow-wrap: anywhere; }
+.coords a:hover { color: var(--terracotta); text-decoration: underline; }
+.adresse-perso { margin-top: 20px; color: var(--texte-doux); font-size: .95rem; }
+.tarifs-1 { grid-template-columns: minmax(0, 640px); }
+.tarifs .note { grid-column: 1 / -1; margin-top: 0; }
+.a-completer { color: var(--terracotta) !important; font-weight: 600 !important; }
+
+@media (max-width: 1080px) {
+  .services { grid-template-columns: 1fr 1fr; }
+  .sommaire-4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  .infos-tarifs { grid-template-columns: 1fr; }
+  .personne { grid-template-columns: 1fr; gap: 40px; }
+  .personne-contact { position: static; }
+  .hero-personne .img { justify-self: start; max-width: 300px; }
+}
+@media (max-width: 640px) {
+  .services { grid-template-columns: 1fr; }
+  .carte-membre { grid-template-columns: 110px 1fr; gap: 20px; align-items: start; }
+  .sommaire-4 { grid-template-columns: 1fr; }
+}
+.carte-photo { display: block; text-decoration: none; }
