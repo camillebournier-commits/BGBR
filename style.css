@@ -494,3 +494,20 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 
 /* Motif dans l'arche du hero */
 .hero .hero-motif { object-fit: cover; object-position: center; background: #3D868F; box-shadow: none; }
+
+/* Mobile : image du hero masquée et bouton de rendez-vous collant */
+.cta-mobile { display: none; }
+@media (max-width: 640px) {
+  .hero .hero-motif { display: none; }
+  .cta-mobile {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: rgba(255,255,255,.96); border-top: 1px solid #E3EAED;
+    box-shadow: 0 -6px 18px rgba(9,38,72,.08);
+    transform: translateY(110%); transition: transform .25s ease;
+  }
+  .cta-mobile.visible { transform: translateY(0); }
+  .cta-mobile .btn-rdv { display: flex; width: 100%; align-items: center; }
+  body.avec-cta .pied { padding-bottom: 88px; }
+}
+@media (prefers-reduced-motion: reduce) { .cta-mobile { transition: none; } }

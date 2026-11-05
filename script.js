@@ -28,4 +28,18 @@
     plier(true);
     btn.addEventListener('click', function () { plier(!cible.hidden); });
   });
+
+  // Mobile : bouton de rendez-vous bilans collant quand celui du hero n'est plus visible
+  var cta = document.getElementById('cta-mobile');
+  var source = document.querySelector('.hero .btn-rdv');
+  if (cta && source && 'IntersectionObserver' in window) {
+    var lien = cta.querySelector('a');
+    document.body.classList.add('avec-cta');
+    new IntersectionObserver(function (entrees) {
+      var cache = !entrees[0].isIntersecting && entrees[0].boundingClientRect.top < 0;
+      cta.classList.toggle('visible', cache);
+      cta.setAttribute('aria-hidden', cache ? 'false' : 'true');
+      lien.tabIndex = cache ? 0 : -1;
+    }).observe(source);
+  }
 })();
