@@ -511,3 +511,12 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
   body.avec-cta .pied { padding-bottom: 88px; }
 }
 @media (prefers-reduced-motion: reduce) { .cta-mobile { transition: none; } }
+
+/* Ce que nous proposons : bande colorée courbée */
+.propose { background: var(--marine); color: var(--blanc); }
+.propose-couleur { color: var(--marine); }
+.propose .conteneur { padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(48px, 7vw, 80px); }
+.propose .chapeau { color: #D7E1EC; }
+.propose .service { background: var(--blanc); color: var(--marine); border: 0; border-top: 5px solid var(--teal); }
+.propose .service:nth-child(odd) { border-top-color: var(--terracotta); }
+.propose .service-vedette { border-top-color: var(--terracotta) !important; }
