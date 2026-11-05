@@ -449,3 +449,6 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 .asterisque { color: #8FC3C9; }
 .hero p.renvoi { margin-top: 12px; font-size: .95rem; color: #8FC3C9; }
 .hero p.renvoi + p { margin-top: 20px; }
+
+/* Carte Google Maps */
+.carte-google { display: block; width: 100%; border: 0; border-radius: 20px; background: #C98A7C; }
