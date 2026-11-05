@@ -493,4 +493,4 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 }
 
 /* Motif dans l'arche du hero */
-.hero .hero-motif { background: #3D868F url("images/motif-hero.jpg") center / cover no-repeat; }
+.hero .hero-motif { object-fit: cover; object-position: center; background: #3D868F; box-shadow: none; }
