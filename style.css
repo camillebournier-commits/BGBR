@@ -401,15 +401,9 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
 .btn-mini:hover { background: var(--marine); color: var(--blanc); }
 
 /* Bilans mis en avant */
-.service-vedette {
-  grid-row: span 2; background: var(--marine); color: var(--blanc);
-  border: 0; display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 32px 28px;
-}
-.service-vedette h3 { font-size: 1.6rem; color: var(--blanc); }
-.service-vedette p { color: #D7E1EC; }
-.lien-clair { margin-top: 20px; font-weight: 600; color: var(--blanc); text-underline-offset: 4px; text-decoration-thickness: 2px; text-decoration-color: var(--terracotta); align-self: flex-start; }
-.lien-clair:hover { color: #F8E6E1; }
+.service-vedette { grid-row: span 2; display: flex; flex-direction: column; justify-content: center; padding: 32px 28px; border-top-color: var(--teal) !important; }
+.service-vedette h3 { font-size: 1.6rem; }
+.service-vedette .lien { margin-top: 20px; align-self: flex-start; }
 
 /* Histoire sur la page d'accueil */
 .histoire-bloc { margin-top: 56px; background: var(--fond-doux); border-radius: 24px; padding: clamp(28px, 4vw, 44px); display: grid; grid-template-columns: .55fr 1.45fr; gap: 40px; }
@@ -418,5 +412,30 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
 .histoire-bloc .texte-repliable p, .histoire-bloc .texte-repliable { margin-top: 16px; }
 .histoire-bloc .lire-plus { margin-top: 16px; }
 @media (max-width: 860px) { .histoire-bloc { grid-template-columns: 1fr; gap: 14px; } }
-.service-vedette .etiquette { align-self: flex-start; margin-bottom: auto; padding: 4px 12px; border-radius: 999px; background: var(--teal); color: var(--blanc); font-weight: 600; font-size: .85rem; }
-.service-vedette h3 { margin-top: 28px; }
+
+/* Procédure de bilan */
+.procedure { list-style: none; margin: 48px 0 0; padding: 0; display: grid; gap: 16px; position: relative; }
+.procedure::before { content: ""; position: absolute; left: 26px; top: 30px; bottom: 30px; width: 2px; background: rgba(255,255,255,.45); }
+.pas { display: grid; grid-template-columns: 54px 1fr; gap: 24px; align-items: start; position: relative; }
+.pas .num {
+  width: 54px; height: 54px; border-radius: 50%; background: var(--blanc); color: var(--teal);
+  display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.4rem; position: relative; z-index: 1;
+}
+.pas-carte { background: var(--blanc); color: var(--marine); border-radius: 18px; padding: 22px 28px; display: grid; grid-template-columns: 230px 1fr; gap: 28px; align-items: baseline; }
+.pas-carte h3 { font-size: 1.3rem; }
+.pas-precision { color: var(--teal); font-weight: 600; font-size: .9rem; margin-top: 4px; }
+.pas-texte { color: var(--texte-doux); max-width: 78ch; }
+.complement-titre { margin-top: 48px; font-size: 1.5rem; }
+.complements { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.complements li { border: 1.5px solid rgba(255,255,255,.6); border-radius: 18px; padding: 22px 26px; }
+.complements h4 { margin: 0 0 8px; font-family: var(--serif); font-weight: 400; font-size: 1.25rem; }
+.complements p { color: #EAF4F5; }
+@media (max-width: 860px) {
+  .pas-carte { grid-template-columns: 1fr; gap: 8px; padding: 20px 22px; }
+  .complements { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .pas { grid-template-columns: 44px 1fr; gap: 14px; }
+  .pas .num { width: 44px; height: 44px; font-size: 1.2rem; }
+  .procedure::before { left: 21px; }
+}
