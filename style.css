@@ -491,3 +491,6 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
   .nav-rdv { flex-direction: column; }
   .nav .btn-rdv { align-items: center; padding: 12px 18px; }
 }
+
+/* Motif dans l'arche du hero */
+.hero .hero-motif { background: #3D868F url("images/motif.jpg") 70% center / cover no-repeat; }
