@@ -439,3 +439,7 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
   .pas .num { width: 44px; height: 44px; font-size: 1.2rem; }
   .procedure::before { left: 21px; }
 }
+.note-medecin { margin-top: 14px; color: var(--marine) !important; font-weight: 600; font-size: .95rem; }
+.insecable { white-space: nowrap; }
+/* Contour léger pour les portraits sur fond clair */
+img.arche { box-shadow: 0 0 0 1px #E3EAED; }
