@@ -445,7 +445,7 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
 img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 
 /* Titre du hero et renvoi */
-.hero:not(.hero-page):not(.hero-personne) h1 { font-size: clamp(2rem, 4vw, 3.2rem); max-width: 19ch; }
+.hero:not(.hero-page):not(.hero-personne) h1 { font-size: clamp(1.6rem, 3.6vw, 2.9rem); max-width: 22ch; }
 .asterisque { color: #8FC3C9; }
 .hero p.renvoi { margin-top: 12px; font-size: .95rem; color: #8FC3C9; }
 .hero p.renvoi + p { margin-top: 20px; }
