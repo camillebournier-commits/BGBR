@@ -127,7 +127,7 @@ p { margin: 0; }
 .cabinet .img { aspect-ratio: 1 / 1; border-radius: 24px; }
 
 /* Public accueilli */
-.publics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+.publics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 48px; }
 .public { background: var(--fond-doux); border-radius: 24px; padding: 32px 28px; }
 .public h3 { color: var(--teal); margin-bottom: 10px; font-size: 1.6rem; }
 .public p { color: var(--texte-doux); }
@@ -195,12 +195,17 @@ p { margin: 0; }
 .acces .btn:hover { background: var(--marine); color: var(--blanc); }
 
 /* Contact */
-.contacts { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 20px; }
-.contact-carte { background: var(--blanc); border: 1.5px solid #DCE5E9; border-radius: 20px; padding: 26px 24px; display: flex; flex-direction: column; gap: 6px; }
+.contacts { list-style: none; margin: 40px 0 0; padding: 0; border-top: 1px solid #DCE5E9; }
+.contact-carte { display: grid; grid-template-columns: 1.3fr 1fr 1.4fr; gap: 6px 32px; align-items: center; padding: 22px 0; border-bottom: 1px solid #DCE5E9; }
+.contact-carte .qui { display: flex; flex-direction: column; }
 .contact-carte h3 { font-size: 1.3rem; }
-.contact-carte .role { color: var(--teal); font-weight: 600; font-size: .95rem; margin-bottom: 10px; }
+.contact-carte .role { color: var(--teal); font-weight: 600; font-size: .95rem; margin-top: 2px; }
 .contact-carte a { font-weight: 600; text-decoration: none; color: var(--marine); overflow-wrap: anywhere; }
 .contact-carte a:hover { color: var(--terracotta); text-decoration: underline; }
+@media (max-width: 760px) {
+  .contact-carte { grid-template-columns: 1fr; gap: 4px; }
+  .contact-carte .qui { margin-bottom: 6px; }
+}
 
 /* Pied de page */
 .pied { background: var(--marine); color: #CBD6E3; }
@@ -228,7 +233,7 @@ p { margin: 0; }
   .hero .img { max-width: 360px; aspect-ratio: 1 / 1; }
   .cabinet { gap: 40px; }
   .cabinet .img { order: -1; aspect-ratio: 16 / 10; }
-  .publics { grid-template-columns: 1fr; }
+  .publics { grid-template-columns: 1fr 1fr; }
   .pied-grille { grid-template-columns: 1fr 1fr; }
   .pied-grille > :first-child { grid-column: 1 / -1; }
 }
@@ -240,6 +245,7 @@ p { margin: 0; }
   .etape .carte { margin-top: 0; }
   .equipe { grid-template-columns: 1fr 1fr; gap: 20px; }
   .valeurs { grid-template-columns: 1fr; }
+  .publics { grid-template-columns: 1fr; }
   .tarif-bloc { padding: 24px 20px; }
   .pied-grille { grid-template-columns: 1fr; }
   .hero .actions .btn { flex: 1 1 auto; text-align: center; }
@@ -249,3 +255,63 @@ p { margin: 0; }
   height: 8px;
   background: #3D868F url("images/motif.jpg") center / cover no-repeat;
 }
+
+/* Photos réelles */
+img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-position: 50% 25%; }
+.membre img.img, .membre .img { aspect-ratio: 3 / 4; }
+
+/* Cartes équipe cliquables */
+.membre-lien { text-decoration: none; display: block; }
+.membre-lien:hover h3 { color: var(--terracotta); }
+.membre-lien .img { transition: transform .25s; }
+.membre-lien:hover .img { transform: translateY(-4px); }
+.nav ul a[aria-current="page"] { color: var(--terracotta); }
+
+/* Contact */
+.contact-carte .precision { font-size: .88rem; color: var(--terracotta); font-weight: 600; margin-top: 2px; }
+.chapeau .lien { font-size: inherit; }
+
+/* Page équipe */
+.hero-page .conteneur { display: block; padding-top: clamp(48px, 6vw, 80px); padding-bottom: clamp(16px, 3vw, 32px); }
+.hero-page h1 { max-width: none; }
+.histoire { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; }
+.histoire p { max-width: 64ch; }
+.histoire p + p { margin-top: 16px; }
+.sommaire { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.sommaire a { display: block; text-decoration: none; padding: 16px 18px; border-radius: 16px; background: var(--fond-doux); font-family: var(--serif); font-size: 1.1rem; line-height: 1.25; }
+.sommaire a span { display: block; font-family: var(--sans); font-size: .85rem; color: var(--teal); font-weight: 600; margin-top: 4px; }
+.sommaire a:hover { background: var(--marine); color: var(--blanc); }
+.sommaire a:hover span { color: #8FC3C9; }
+.profils { padding-bottom: clamp(48px, 7vw, 96px); }
+.profil { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; padding: 56px 0; border-top: 1px solid #E3EAED; }
+.profil:first-child { border-top: 0; padding-top: 0; }
+.profil-photo { aspect-ratio: 3 / 4; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 108px); }
+.profil .role { color: var(--teal); font-weight: 600; }
+.profil h2 { margin-top: 6px; }
+.info-profil { margin-top: 20px; background: var(--fond-doux); border-left: 3px solid var(--terracotta); padding: 14px 18px; border-radius: 0 12px 12px 0; color: var(--marine); max-width: 64ch; }
+.bio { margin-top: 20px; }
+.bio p { max-width: 64ch; color: var(--texte-doux); }
+.bio p + p { margin-top: 14px; }
+.details { margin: 28px 0 0; display: grid; gap: 0; max-width: 72ch; }
+.details > div { display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 12px 0; border-bottom: 1px solid #E3EAED; }
+.details dt { font-weight: 700; font-size: .93rem; }
+.details dd { margin: 0; color: var(--texte-doux); font-size: .97rem; }
+.profil-contact { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px 28px; }
+.profil-contact a { font-weight: 600; text-decoration: none; color: var(--marine); overflow-wrap: anywhere; }
+.profil-contact a:hover { color: var(--terracotta); text-decoration: underline; }
+.cta .conteneur { text-align: center; }
+.cta .chapeau { margin-left: auto; margin-right: auto; }
+
+@media (max-width: 1080px) {
+  .sommaire { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 860px) {
+  .histoire { grid-template-columns: 1fr; gap: 24px; }
+  .profil { grid-template-columns: 1fr; gap: 28px; }
+  .profil-photo { position: static; max-width: 280px; }
+}
+@media (max-width: 640px) {
+  .sommaire { grid-template-columns: 1fr 1fr; }
+  .details > div { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .membre-lien:hover .img { transform: none; } }
