@@ -470,3 +470,8 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 .pas-titre { display: flex; flex-direction: column; align-items: flex-start; }
 .pas-titre .pas-precision { order: 2; }
 .pas-titre .pas-duree { order: 3; }
+
+/* Contacts : emails empilés */
+.contact-carte .mails { display: flex; flex-direction: column; gap: 4px; }
+.contact-carte .mails a + a { font-weight: 500; color: var(--texte-doux); font-size: .95rem; }
+@media (max-width: 760px) { .sans-tel { display: none; } }
