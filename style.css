@@ -480,3 +480,14 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 .btn-rdv { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.2; padding: 12px 26px; border-radius: 18px; }
 .btn-rdv span { font-size: .85rem; font-weight: 500; opacity: .85; margin-top: 2px; }
 @media (max-width: 640px) { .btn-rdv { align-items: center; } }
+
+/* Boutons de rendez-vous dans le menu */
+.nav-rdv { display: flex; gap: 10px; }
+.nav .btn-rdv { padding: 8px 18px; font-size: .9rem; border-radius: 14px; }
+.nav .btn-rdv span { font-size: .78rem; }
+.btn-contour-sombre { border-color: var(--marine); color: var(--marine); background: transparent; }
+.btn-contour-sombre:hover { background: var(--marine); color: var(--blanc); }
+@media (max-width: 960px) {
+  .nav-rdv { flex-direction: column; }
+  .nav .btn-rdv { align-items: center; padding: 12px 18px; }
+}
