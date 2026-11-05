@@ -14,4 +14,18 @@
       bouton.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Texte repliable : visible sans JavaScript, replié dès que le script se charge
+  document.querySelectorAll('.lire-plus').forEach(function (btn) {
+    var cible = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!cible) return;
+    var plier = function (replie) {
+      cible.hidden = replie;
+      btn.setAttribute('aria-expanded', replie ? 'false' : 'true');
+      btn.textContent = replie ? "Lire l'histoire du cabinet" : 'Réduire';
+    };
+    btn.hidden = false;
+    plier(true);
+    btn.addEventListener('click', function () { plier(!cible.hidden); });
+  });
 })();

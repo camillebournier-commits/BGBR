@@ -306,10 +306,10 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
 @media (prefers-reduced-motion: reduce) { .membre-lien:hover .img { transform: none; } }
 
 /* Ce que nous proposons */
-.services { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.services { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: 1.15fr repeat(3, 1fr); gap: 20px; }
 .service { border: 1.5px solid #DCE5E9; border-radius: 20px; padding: 28px 26px; border-top: 4px solid var(--teal); }
-.service:nth-child(3n+2) { border-top-color: var(--terracotta); }
-.service:nth-child(3n) { border-top-color: var(--marine); }
+.service:nth-child(3n) { border-top-color: var(--terracotta); }
+.service:nth-child(3n+1) { border-top-color: var(--marine); }
 .service h3 { font-size: 1.3rem; margin-bottom: 10px; }
 .service p { color: var(--texte-doux); font-size: .97rem; }
 
@@ -364,6 +364,7 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
 
 @media (max-width: 1080px) {
   .services { grid-template-columns: 1fr 1fr; }
+  .service-vedette { grid-column: 1 / -1; grid-row: auto; }
   .sommaire-4 { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 860px) {
@@ -378,3 +379,44 @@ img.img { width: 100%; height: auto; padding: 0; object-fit: cover; object-posit
   .sommaire-4 { grid-template-columns: 1fr; }
 }
 .carte-photo { display: block; text-decoration: none; }
+
+/* Texte repliable (Lire la suite) */
+.texte-repliable p + p { margin-top: 16px; }
+.texte-repliable[hidden] { display: none; }
+.lire-plus {
+  margin-top: 18px; background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; font-weight: 600; color: var(--marine);
+  text-decoration: underline; text-decoration-color: var(--terracotta);
+  text-decoration-thickness: 2px; text-underline-offset: 4px;
+}
+.lire-plus:hover { color: var(--terracotta); }
+
+/* Bouton sous chaque membre */
+.membre { display: flex; flex-direction: column; }
+.membre .desc { flex: 1; }
+.btn-mini {
+  align-self: flex-start; margin-top: 16px; padding: 9px 18px; font-size: .9rem;
+  border-color: var(--marine); color: var(--marine); background: transparent;
+}
+.btn-mini:hover { background: var(--marine); color: var(--blanc); }
+
+/* Bilans mis en avant */
+.service-vedette {
+  grid-row: span 2; background: var(--marine); color: var(--blanc);
+  border: 0; display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 32px 28px;
+}
+.service-vedette h3 { font-size: 1.6rem; color: var(--blanc); }
+.service-vedette p { color: #D7E1EC; }
+.lien-clair { margin-top: 20px; font-weight: 600; color: var(--blanc); text-underline-offset: 4px; text-decoration-thickness: 2px; text-decoration-color: var(--terracotta); align-self: flex-start; }
+.lien-clair:hover { color: #F8E6E1; }
+
+/* Histoire sur la page d'accueil */
+.histoire-bloc { margin-top: 56px; background: var(--fond-doux); border-radius: 24px; padding: clamp(28px, 4vw, 44px); display: grid; grid-template-columns: .55fr 1.45fr; gap: 40px; }
+.histoire-bloc h3 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); }
+.histoire-bloc p { max-width: 75ch; }
+.histoire-bloc .texte-repliable p, .histoire-bloc .texte-repliable { margin-top: 16px; }
+.histoire-bloc .lire-plus { margin-top: 16px; }
+@media (max-width: 860px) { .histoire-bloc { grid-template-columns: 1fr; gap: 14px; } }
+.service-vedette .etiquette { align-self: flex-start; margin-bottom: auto; padding: 4px 12px; border-radius: 999px; background: var(--teal); color: var(--blanc); font-weight: 600; font-size: .85rem; }
+.service-vedette h3 { margin-top: 28px; }
