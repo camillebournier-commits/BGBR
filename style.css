@@ -452,3 +452,14 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 
 /* Carte Google Maps */
 .carte-google { display: block; width: 100%; border: 0; border-radius: 20px; background: #C98A7C; }
+
+/* Tarifs page d'accueil : séances */
+.tarif-intro { color: var(--texte-doux); font-size: .97rem; }
+.liste-intervenantes { list-style: none; margin: 18px 0 0; padding: 0; }
+.liste-intervenantes a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid #E3EAED; text-decoration: none; }
+.liste-intervenantes li:last-child a { border-bottom: 0; }
+.liste-intervenantes .qui-nom { font-weight: 600; color: var(--marine); text-decoration: underline; text-decoration-color: var(--terracotta); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.liste-intervenantes .qui-role { color: var(--teal); font-size: .9rem; font-weight: 600; text-align: right; }
+.liste-intervenantes a:hover .qui-nom { color: var(--terracotta); }
+.tarifs-fond .tarifs { margin-top: 32px; }
+@media (max-width: 640px) { .liste-intervenantes a { flex-direction: column; gap: 2px; } .liste-intervenantes .qui-role { text-align: left; } }
