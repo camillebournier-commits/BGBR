@@ -1,4 +1,4 @@
-/* Cabinet BGBR - menu mobile */
+/* TND Cabinet - menu mobile */
 
 (function () {
   var bouton = document.querySelector('.burger');
