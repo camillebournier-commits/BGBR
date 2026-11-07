@@ -541,3 +541,6 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
   .legal { grid-template-columns: 1fr; gap: 32px; }
   .legal-sommaire { position: static; }
 }
+
+/* Photo du cabinet */
+.cabinet .photo-cabinet { object-fit: cover; object-position: 55% 55%; }
