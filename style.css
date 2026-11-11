@@ -572,5 +572,17 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 
 /* Façade : on garde le bas de la photo (trottoir, magasin voisin) */
 .img-facade { object-position: center bottom !important; }
-.photo .img-facade { aspect-ratio: 1054 / 1200; }
-.locaux-arrivee { align-items: end; }
+
+/* Façade recadrée sur le rez-de-chaussée */
+.visuels-acces .facade-large { grid-column: 1 / -1; aspect-ratio: 2 / 1 !important; object-position: center !important; }
+.locaux-arrivee { grid-template-columns: 1fr; gap: 40px; }
+.locaux-arrivee .etapes-arrivee { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.arrivee-photos { display: grid; grid-template-columns: 1.99fr .75fr; gap: 20px; align-items: start; }
+.arrivee-photos .photo img { aspect-ratio: auto; height: auto; }
+.arrivee-photos .photo:first-child img { aspect-ratio: 1400 / 702; }
+.arrivee-photos .photo:last-child img { aspect-ratio: 865 / 1153; }
+@media (max-width: 860px) {
+  .locaux-arrivee .etapes-arrivee { grid-template-columns: 1fr; }
+  .arrivee-photos { grid-template-columns: 1fr; }
+  .arrivee-photos .photo:last-child { max-width: 360px; }
+}
