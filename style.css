@@ -543,7 +543,7 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 }
 
 /* Photo du cabinet */
-.cabinet .photo-cabinet { object-fit: cover; object-position: 55% 55%; }
+.cabinet .photo-cabinet { object-fit: cover; object-position: 50% 62%; }
 
 /* Page Nos locaux */
 .photo { margin: 0; }
@@ -569,3 +569,8 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 .cabinet-figure { margin: 0; }
 .cabinet-figure figcaption { margin-top: 14px; }
 @media (max-width: 860px) { .cabinet-figure { order: -1; } .acces .btn-locaux { margin-left: 0; margin-top: 12px; } }
+
+/* Façade : on garde le bas de la photo (trottoir, magasin voisin) */
+.img-facade { object-position: center bottom !important; }
+.photo .img-facade { aspect-ratio: 1054 / 1200; }
+.locaux-arrivee { align-items: end; }
