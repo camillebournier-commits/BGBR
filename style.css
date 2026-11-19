@@ -593,3 +593,6 @@ img.arche { box-shadow: 0 0 0 1px #E3EAED; }
 .aide-financement ul { margin: 0; padding-left: 20px; display: grid; gap: 10px; color: var(--texte-doux); }
 .aide-financement a { color: var(--marine); font-weight: 600; text-underline-offset: 3px; text-decoration-color: var(--terracotta); text-decoration-thickness: 2px; }
 .aide-financement a:hover { color: var(--terracotta); }
+
+/* Deuxième procédure (TDA/H) */
+.procedure-titre-2 { margin-top: 64px; }
